@@ -19,7 +19,9 @@ function getTasksFromLocalStorage() {
     else {
         books = JSON.parse(localStorage.getItem("books"));
     }
+    let ii = 0;
     books.forEach(myfunction2);
+
 
     function myfunction2(e) {
         const tr = document.createElement("tr");
@@ -30,9 +32,11 @@ function getTasksFromLocalStorage() {
         link.setAttribute("href", "#");
         link.className = "secondary-content";
         link.appendChild(document.createTextNode("X"));
-        td1.appendChild(document.createTextNode(books[0]));
-        td2.appendChild(document.createTextNode(books[1]));
-        td3.appendChild(document.createTextNode(books[2]));
+        
+        td1.appendChild(document.createTextNode(books[ii][0]));
+        td2.appendChild(document.createTextNode(books[ii][1]));
+        td3.appendChild(document.createTextNode(books[ii][2]));
+        ii += 1;
         tr.appendChild(td1);
         tr.appendChild(td2);
         tr.appendChild(td3);
